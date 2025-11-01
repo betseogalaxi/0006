@@ -149,6 +149,7 @@ document.getElementById('mobile-menu-btn')?.addEventListener('click',()=>{
 <!-- Hero Section with Parallax -->
 <section id="hero" class="py-12">
   <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+    <!-- Left Column: Text and CTAs -->
     <div class="space-y-6 reveal reveal-delay-1">
       <h1 class="text-4xl md:text-5xl font-extrabold leading-tight drop-shadow-lg">
         🎯 Türkiye'nin güvenilir bahis sitesi <strong class="text-[#FFD700]">Giriş BetPuan</strong>
@@ -162,9 +163,38 @@ document.getElementById('mobile-menu-btn')?.addEventListener('click',()=>{
         </a>
       </div>
     </div>
-    <div class="hero-bg h-96 rounded-xl shadow-lg"></div>
+
+ <!-- Right column: single larger full-height image (no overflow) -->
+    <div class="fade-in">
+      <div class="h-[400px] md:h-[550px] relative">
+        <img 
+          src="https://github.com/betseogalaxi/m/blob/main/000024-king.jpg?raw=true" 
+          alt="IOS Download" 
+          class="w-full h-full object-contain" 
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+<!-- Games Section - Horizontal Scroll -->
+<section id="oyunlar" class="py-12 bg-[#1B1F2A]">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-2xl md:text-3xl font-bold mb-6 reveal">🎮 Popüler Oyunlar</h2>
+    <div class="scroll-x reveal gap-6">
+      <div class="min-w-[200px] bg-[var(--lightcard)] rounded-xl p-4 flex flex-col items-center">
+        <img src="https://github.com/betseogalaxi/m/blob/main/00006-roulette-bonus-10.jpg" alt="Roulette Bonus" class="rounded-xl w-full mb-2" />
+        <span class="text-sm font-semibold">Roulette Bonus 10</span>
+      </div>
+      <div class="min-w-[200px] bg-[var(--lightcard)] rounded-xl p-4 flex flex-col items-center">
+        <img src="https://github.com/betseogalaxi/m/blob/main/000018-ios.jpg" alt="BetPuan App" class="rounded-xl w-full mb-2" />
+        <span class="text-sm font-semibold">BetPuan Mobil</span>
+      </div>
+      <!-- Add more game items as needed -->
+    </div>
   </div>
 </section>
+
+
 <!-- Games Section - Horizontal Scroll -->
 <section id="oyunlar" class="py-12 bg-[#1B1F2A]">
   <div class="max-w-6xl mx-auto px-6">
