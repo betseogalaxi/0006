@@ -53,6 +53,50 @@ img, iframe { pointer-events: none !important; }
 .reveal.active { opacity:1; transform:translateY(0); }
 
 @media(max-width:768px){ .hero-bg{height:260px;} }
+
+  /* Ensure body never allows horizontal scroll */
+body {
+  overflow-x: hidden;
+}
+
+/* Horizontal scroll section: allow scroll but prevent extra page width */
+.scroll-x {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+/* Game cards: shrink flex items on smaller screens */
+.scroll-x > div {
+  flex-shrink: 0;
+}
+
+/* Hero image: constrain to parent width */
+.hero-bg img, .fade-in img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Make top-level container padding responsive */
+.max-w-6xl {
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+
+/* Mobile tweaks for smaller widths */
+@media (max-width: 480px) {
+  .scroll-x {
+    gap: 0.5rem;
+  }
+  .scroll-x > div {
+    min-width: 150px;
+  }
+  .px-6 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
 </style>
 </head>
 <body>
