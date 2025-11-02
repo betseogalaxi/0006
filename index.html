@@ -19,11 +19,12 @@
   --lightcard:#2A2E3F;
   --textlight:#fff;
   --textdark:#1B1F2A;
+  --footerbg:#0D111D;
 }
 
 /* Basic Styles */
-html,body { height:100%; margin:0; font-family:Inter,ui-sans-serif,sans-serif; background: var(--darkbg); color: var(--textlight);}
-img, iframe { pointer-events: none !important; }
+html,body { height:100%; margin:0; font-family:Inter,ui-sans-serif,sans-serif; background: var(--darkbg); color: var(--textlight); overflow-x:hidden; }
+img, iframe { pointer-events: none !important; max-width:100%; height:auto; display:block; }
 
 /* Hero Parallax */
 .hero-bg { background-image: url('https://github.com/betseogalaxi/m/blob/main/000018-ios.jpg'); background-size: cover; background-position: center; background-attachment: fixed; border-radius: 12px; }
@@ -47,56 +48,18 @@ img, iframe { pointer-events: none !important; }
 /* Horizontal Scroll Games */
 .scroll-x { display:flex; overflow-x:auto; gap:1rem; padding:1rem 0; scroll-behavior:smooth; }
 .scroll-x::-webkit-scrollbar { display:none; }
+.scroll-x > div { flex-shrink:0; }
 
 /* Reveal Animations */
 .reveal { opacity:0; transform:translateY(20px); transition: all 0.8s ease-out; }
-.reveal.active { opacity:1; transform:translateY(0); }
+.reveal.active { opacity:1; }
 
 @media(max-width:768px){ .hero-bg{height:260px;} }
-
-  /* Ensure body never allows horizontal scroll */
-body {
-  overflow-x: hidden;
+@media(max-width:480px){ 
+  .scroll-x{gap:0.5rem; padding-left:0.5rem; padding-right:0.5rem;} 
+  .scroll-x > div{min-width:150px;}
+  .px-6{padding-left:1rem; padding-right:1rem;}
 }
-
-/* Horizontal scroll section: allow scroll but prevent extra page width */
-.scroll-x {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-}
-
-/* Game cards: shrink flex items on smaller screens */
-.scroll-x > div {
-  flex-shrink: 0;
-}
-
-/* Hero image: constrain to parent width */
-.hero-bg img, .fade-in img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Make top-level container padding responsive */
-.max-w-6xl {
-  max-width: 100% !important;
-  box-sizing: border-box;
-}
-
-/* Mobile tweaks for smaller widths */
-@media (max-width: 480px) {
-  .scroll-x {
-    gap: 0.5rem;
-  }
-  .scroll-x > div {
-    min-width: 150px;
-  }
-  .px-6 {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-}
-
 </style>
 </head>
 <body>
@@ -105,13 +68,13 @@ body {
 <div class="flex justify-center mt-4 mb-6">
   <div class="bg-[var(--topmenu)] rounded-xl shadow-lg px-6 py-4 max-w-4xl w-full relative overflow-hidden h-16">
     <div class="testimonial absolute w-full text-center top-1/2 transform -translate-y-1/2 opacity-0 transition-opacity duration-1000">
-      💬 Ahmet K., İstanbul: “Giriş BetPuan ile kazancım arttı!”
+      💬 Ahmet K., “Giriş BetPuan ile kazancım arttı!”
     </div>
     <div class="testimonial absolute w-full text-center top-1/2 transform -translate-y-1/2 opacity-0 transition-opacity duration-1000">
-      💬 Elif S., Ankara: “Mobil bahis deneyimi mükemmel.”
+      💬 Elif S., “Mobil bahis deneyimi mükemmel.”
     </div>
     <div class="testimonial absolute w-full text-center top-1/2 transform -translate-y-1/2 opacity-0 transition-opacity duration-1000">
-      💬 Mehmet T., İzmir: “Bonuslar harika ve güvenilir site.”
+      💬 Mehmet T., “Bonuslar harika ve güvenilir site.”
     </div>
   </div>
 </div>
@@ -219,26 +182,9 @@ document.getElementById('mobile-menu-btn')?.addEventListener('click',()=>{
         />
       </div>
     </div>
-
-<!-- Games Section - Horizontal Scroll -->
-<section id="oyunlar" class="py-12 bg-[#1B1F2A]">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-2xl md:text-3xl font-bold mb-6 reveal">🎮 Popüler Oyunlar</h2>
-    <div class="scroll-x reveal gap-6">
-      <div class="min-w-[200px] bg-[var(--lightcard)] rounded-xl p-4 flex flex-col items-center">
-        <img src="https://github.com/betseogalaxi/m/blob/main/00006-roulette-bonus-10.jpg" alt="Roulette Bonus" class="rounded-xl w-full mb-2" />
-        <span class="text-sm font-semibold">Roulette Bonus 10</span>
-      </div>
-      <div class="min-w-[200px] bg-[var(--lightcard)] rounded-xl p-4 flex flex-col items-center">
-        <img src="https://github.com/betseogalaxi/m/blob/main/000018-ios.jpg" alt="BetPuan App" class="rounded-xl w-full mb-2" />
-        <span class="text-sm font-semibold">BetPuan Mobil</span>
-      </div>
-      <!-- Add more game items as needed -->
-    </div>
   </div>
 </section>
 
-
 <!-- Games Section - Horizontal Scroll -->
 <section id="oyunlar" class="py-12 bg-[#1B1F2A]">
   <div class="max-w-6xl mx-auto px-6">
@@ -252,7 +198,14 @@ document.getElementById('mobile-menu-btn')?.addEventListener('click',()=>{
         <img src="https://github.com/betseogalaxi/m/blob/main/000018-ios.jpg" alt="BetPuan App" class="rounded-xl w-full mb-2" />
         <span class="text-sm font-semibold">BetPuan Mobil</span>
       </div>
-      <!-- Add more game items as needed -->
+      <div class="min-w-[200px] bg-[var(--lightcard)] rounded-xl p-4 flex flex-col items-center">
+        <img src="https://github.com/betseogalaxi/m/blob/main/000024-king.jpg" alt="King Slot" class="rounded-xl w-full mb-2" />
+        <span class="text-sm font-semibold">King Slot</span>
+      </div>
+      <div class="min-w-[200px] bg-[var(--lightcard)] rounded-xl p-4 flex flex-col items-center">
+        <img src="https://github.com/betseogalaxi/m/blob/main/000018-ios.jpg" alt="BetPuan Mobil" class="rounded-xl w-full mb-2" />
+        <span class="text-sm font-semibold">Mobil Bahis</span>
+      </div>
     </div>
   </div>
 </section>
@@ -317,7 +270,7 @@ document.getElementById('mobile-menu-btn')?.addEventListener('click',()=>{
 <section id="sss" class="py-12 bg-[#0D111D] text-gray-200">
   <div class="max-w-6xl mx-auto px-6 space-y-4">
     <h2 class="text-2xl md:text-3xl font-bold reveal">❓ Sıkça Sorulan Sorular</h2>
-    <div class="space-y-2">
+    <div class="grid md:grid-cols-2 gap-4">
       <details class="bg-[var(--lightcard)] rounded-xl p-4 reveal">
         <summary class="font-semibold cursor-pointer">Giriş BetPuan güvenli mi?</summary>
         <p class="mt-2 text-sm">Evet, SSL ve lisanslı altyapı ile tüm işlemler güvenli şekilde yapılmaktadır.</p>
@@ -338,13 +291,32 @@ document.getElementById('mobile-menu-btn')?.addEventListener('click',()=>{
         <summary class="font-semibold cursor-pointer">Lisanslı bahis siteleri arasında mı?</summary>
         <p class="mt-2 text-sm">Evet, Giriş BetPuan lisanslı ve güvenilir bir bahis sitesidir.</p>
       </details>
+      <details class="bg-[var(--lightcard)] rounded-xl p-4 reveal reveal-delay-5">
+        <summary class="font-semibold cursor-pointer">Destek hattı 7/24 mı?</summary>
+        <p class="mt-2 text-sm">Evet, canlı destek hattımız günün her saati hizmetinizdedir.</p>
+      </details>
+      <details class="bg-[var(--lightcard)] rounded-xl p-4 reveal reveal-delay-6">
+        <summary class="font-semibold cursor-pointer">Yatırımlarım güvenli mi?</summary>
+        <p class="mt-2 text-sm">Tüm yatırımlarınız güvenli altyapı ve şifreleme ile korunmaktadır.</p>
+      </details>
+      <details class="bg-[var(--lightcard)] rounded-xl p-4 reveal reveal-delay-7">
+        <summary class="font-semibold cursor-pointer">Bonusları nasıl alırım?</summary>
+        <p class="mt-2 text-sm">Uygun bonuslar otomatik olarak hesabınıza tanımlanır.</p>
+      </details>
+      <details class="bg-[var(--lightcard)] rounded-xl p-4 reveal reveal-delay-8">
+        <summary class="font-semibold cursor-pointer">Hangi oyunlar mevcut?</summary>
+        <p class="mt-2 text-sm">Canlı bahis, slot ve casino oyunları mevcuttur.</p>
+      </details>
+      <details class="bg-[var(--lightcard)] rounded-xl p-4 reveal reveal-delay-9">
+        <summary class="font-semibold cursor-pointer">Uygulamayı nereden indirebilirim?</summary>
+        <p class="mt-2 text-sm">Android ve iOS uygulamalarımızı footer linklerinden indirebilirsiniz.</p>
+      </details>
     </div>
   </div>
 </section>
 
-<!-- Domain 6 Footer with Logo, Larger App Logos & Floating CTA -->
+<!-- Footer -->
 <footer class="bg-[var(--footerbg)] py-10 px-6 text-white text-center relative">
-
   <!-- Main Logo -->
   <div class="mb-6">
     <a href="https://girisbetpuan.com">
@@ -357,7 +329,7 @@ document.getElementById('mobile-menu-btn')?.addEventListener('click',()=>{
     Lisanslı BetPuan - Türkiye’nin <strong>güvenilir bahis sitesi</strong> ve <strong>mobil bahis giriş</strong>
   </p>
 
-  <!-- App Download Buttons with Larger Logos -->
+  <!-- App Download Buttons -->
   <div class="flex justify-center gap-12 mb-6 flex-wrap">
     <a href="https://2bpuan.app" target="_blank" rel="nofollow" class="flex flex-col items-center text-white hover:text-yellow-500">
       <img src="https://raw.githubusercontent.com/betseogalaxi/m/main/android.png" alt="Android Logo" class="w-20 mb-2">
