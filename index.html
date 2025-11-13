@@ -237,50 +237,6 @@
 </head>
 <body>
 
-<!-- Top rotating testimonials (compact) -->
-<div class="flex justify-center mt-4 mb-6 px-4">
-  <div class="bg-[#18262f] rounded-xl shadow-lg px-5 py-3 max-w-4xl w-full relative overflow-hidden h-16">
-<div class="testimonial absolute w-full text-center top-1/2 transform -translate-y-1/2 opacity-0">
-  <i class="fa-regular fa-message"></i> 💰 Selim A., "Hızlı çekim, 7/24 destek — tavsiye ederim."
-</div>
-<div class="testimonial absolute w-full text-center top-1/2 transform -translate-y-1/2 opacity-0">
-  <i class="fa-regular fa-message"></i> 🎁 Zeynep M., "Mobil giriş süper hızlı, bonuslar iyi."
-</div>
-<div class="testimonial absolute w-full text-center top-1/2 transform -translate-y-1/2 opacity-0">
-  <i class="fa-regular fa-message"></i> ⭐ Onur K., "Kullanıcı arayüzü temiz ve güvenli."
-</div>
-<div class="testimonial absolute w-full text-center top-1/2 transform -translate-y-1/2 opacity-0">
-  <i class="fa-solid fa-coins"></i> 💰 Ayşe D., "Kripto çekimleri anında hesabımdaydı."
-</div>
-<div class="testimonial absolute w-full text-center top-1/2 transform -translate-y-1/2 opacity-0">
-  <i class="fa-solid fa-gift"></i> 🎁 Mete S., "Bonus kampanyaları gerçekten kazançlı."
-</div>
-<div class="testimonial absolute w-full text-center top-1/2 transform -translate-y-1/2 opacity-0">
-  <i class="fa-solid fa-shield-halved"></i> 🔐 İrem T., "Güvenilir ve lisanslı altyapı, içim rahat."
-</div>
-<div class="testimonial absolute w-full text-center top-1/2 transform -translate-y-1/2 opacity-0">
-  <i class="fa-regular fa-thumbs-up"></i> 👍 Cihan K., "Müşteri hizmetleri çok hızlı dönüş yapıyor."
-</div>
-<div class="testimonial absolute w-full text-center top-1/2 transform -translate-y-1/2 opacity-0">
-  <i class="fa-solid fa-fire"></i> 🔥 Nilay B., "Canlı casino oyunları ve oranları harika."
-</div>
-<div class="testimonial absolute w-full text-center top-1/2 transform -translate-y-1/2 opacity-0">
-  <i class="fa-regular fa-star"></i> ⭐ Tolga R., "Site mobil cihazlarda da hiç kasmıyor."
-</div>
-<div class="testimonial absolute w-full text-center top-1/2 transform -translate-y-1/2 opacity-0">
-  <i class="fa-solid fa-trophy"></i> 🏆 Eda L., "Kazandığım parayı kolayca çektim, tekrar geleceğim."
-</div>
-  </div>
-</div>
-
-<script>
-(function rotate(){
-  const t = document.querySelectorAll('.testimonial'); if(!t.length) return;
-  let i=0; t[i].classList.add('active');
-  setInterval(()=>{ t[i].classList.remove('active'); i=(i+1)%t.length; t[i].classList.add('active'); },4500);
-})();
-</script>
-
 <!-- Topbar -->
 <div class="bg-[var(--topbar)] text-[#042] text-sm">
   <div class="container flex flex-col md:flex-row items-center justify-between gap-2 py-2">
@@ -391,6 +347,51 @@ document.getElementById('mobile-btn')?.addEventListener('click',()=>document.get
 
   </div>
 </section>
+
+  <!-- Top rotating testimonials (compact) -->
+<div class="flex justify-center mt-4 mb-6 px-4">
+  <div class="bg-[#18262f] rounded-xl shadow-lg px-5 py-3 max-w-4xl w-full relative overflow-hidden h-16">
+<div class="testimonial absolute w-full text-center top-1/2 transform -translate-y-1/2 opacity-0">
+  <i class="fa-regular fa-message"></i> 💰 Selim A., "Hızlı çekim, 7/24 destek — tavsiye ederim."
+</div>
+<div class="testimonial absolute w-full text-center top-1/2 transform -translate-y-1/2 opacity-0">
+  <i class="fa-regular fa-message"></i> 🎁 Zeynep M., "Mobil giriş süper hızlı, bonuslar iyi."
+</div>
+<div class="testimonial absolute w-full text-center top-1/2 transform -translate-y-1/2 opacity-0">
+  <i class="fa-regular fa-message"></i> ⭐ Onur K., "Kullanıcı arayüzü temiz ve güvenli."
+</div>
+<div class="testimonial absolute w-full text-center top-1/2 transform -translate-y-1/2 opacity-0">
+  <i class="fa-solid fa-coins"></i> 💰 Ayşe D., "Kripto çekimleri anında hesabımdaydı."
+</div>
+<div class="testimonial absolute w-full text-center top-1/2 transform -translate-y-1/2 opacity-0">
+  <i class="fa-solid fa-gift"></i> 🎁 Mete S., "Bonus kampanyaları gerçekten kazançlı."
+</div>
+<div class="testimonial absolute w-full text-center top-1/2 transform -translate-y-1/2 opacity-0">
+  <i class="fa-solid fa-shield-halved"></i> 🔐 İrem T., "Güvenilir ve lisanslı altyapı, içim rahat."
+</div>
+<div class="testimonial absolute w-full text-center top-1/2 transform -translate-y-1/2 opacity-0">
+  <i class="fa-regular fa-thumbs-up"></i> 👍 Cihan K., "Müşteri hizmetleri çok hızlı dönüş yapıyor."
+</div>
+<div class="testimonial absolute w-full text-center top-1/2 transform -translate-y-1/2 opacity-0">
+  <i class="fa-solid fa-fire"></i> 🔥 Nilay B., "Canlı casino oyunları ve oranları harika."
+</div>
+<div class="testimonial absolute w-full text-center top-1/2 transform -translate-y-1/2 opacity-0">
+  <i class="fa-regular fa-star"></i> ⭐ Tolga R., "Site mobil cihazlarda da hiç kasmıyor."
+</div>
+<div class="testimonial absolute w-full text-center top-1/2 transform -translate-y-1/2 opacity-0">
+  <i class="fa-solid fa-trophy"></i> 🏆 Eda L., "Kazandığım parayı kolayca çektim, tekrar geleceğim."
+</div>
+  </div>
+</div>
+
+<script>
+(function rotate(){
+  const t = document.querySelectorAll('.testimonial'); if(!t.length) return;
+  let i=0; t[i].classList.add('active');
+  setInterval(()=>{ t[i].classList.remove('active'); i=(i+1)%t.length; t[i].classList.add('active'); },4500);
+})();
+</script>
+
 
   <!-- Video Section -->
 <section class="py-12 bg-[#3E4967] text-center">
